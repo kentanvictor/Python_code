@@ -1,5 +1,6 @@
 from urllib import request
 import http.cookiejar
+
 url = 'http://www.baidu.com'
 print('第一种方法:')
 response1 = request.urlopen(url)

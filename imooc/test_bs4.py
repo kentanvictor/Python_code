@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import re
+
 html_doc = """
 <html><head><title>The Dormouse's story</title></head>
 <body>
@@ -16,12 +17,12 @@ print('获取所有链接')
 links = soup.find_all('a')
 for link in links:
     print(link.name, link['href'], link.get_text())
-#这里只想获取Lacie的链接，所以href后面的链接就可以直接复制过来
+# 这里只想获取Lacie的链接，所以href后面的链接就可以直接复制过来
 print('获取Lacie链接')
 linknode = soup.find_all('a', href='http://example.com/lacie')
 for link in linknode:
     print(link.name, link['href'], link.get_text())
-#正则匹配就相当于模糊匹配
+# 正则匹配就相当于模糊匹配
 print('正则匹配')
 linknode = soup.find_all('a', href=re.compile(r'ill'))
 for link in linknode:
